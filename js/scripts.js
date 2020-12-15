@@ -7,6 +7,10 @@ let pokemonList = [{name: 'Bulbasaur', height: 7, types: ['grass', 'poison']},
 for (let i = 1; i < pokemonList.length; i++) {
  
  if (pokemonList[i].height === 7 && pokemonList[i].types === 'grass' && 'poison') {
-    console.log(pokemonList[i].height + "is Bulbasaur");
+    console.log(pokemonList[i].name + "is Bulbasaur");
+ } else if (pokemonList[i].height === 1.6 && pokemonList[i].types === 'ground', 'rock', 'electric', 'ice', 'psychic') {
+    console.log(pokemonList[i].name + "is Golbat");
+ } else {
+    console.log(pokemonList[i].name + "is Shellder")
  }
-}
+ }
