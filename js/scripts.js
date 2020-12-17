@@ -11,10 +11,10 @@ for (let i = 1; i < pokemonList.length; i++ {
 =======
     for (var i = 0; i < pokemonList.length; i++) {
         if (pokemonList[i].height > 1.6) {
-            document.write(pokemonList[0].name + " (height: " + pokemonList[0].height + ") - Wow, that\'s big!");
+            document.write("<p>" + pokemonList[i].name + " (height: " + pokemonList[i].height + ") - Wow, that\'s big!</p>");
             //This print's Bulbasaur's name and height to the console if the conditions are met//
         } else {
-            document.write(pokemonList[i].name + " (height: " + pokemonList[i].height + "); ");
+            document.write("<p>" + pokemonList[i].name + " (height: " + pokemonList[i].height + ") </p>");
             //This writes Pokemon's height next to it's name//
 >>>>>>> main
     }
