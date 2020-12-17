@@ -5,4 +5,5 @@ let pokemonList = [{name: 'Bulbasaur', height: 7, types: ['grass', 'poison']},
 
    for (var i = 0; i < pokemonList.length; i++) {
     document.write(pokemonList[i].name + ' (height: ' + pokemonList[i].height + '); ');
+    //This writes Pokemon's height next to it's name//
  }
