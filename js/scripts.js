@@ -6,8 +6,8 @@ let pokemonList = [{name: 'Bulbasaur', height: 7, types: ['grass', 'poison']},
    for (var i = 0; i < pokemonList.length; i++) {
     document.write(pokemonList[i].name + " (height: " + pokemonList[i].height + "); ");
     //This writes Pokemon's height next to it's name//
- }
-      if (height > 1.6) {
-         console.log(pokemonList[0].name + " (height: " + pokemonList[0].height + ") - Wow, that\'s big!");
-         //This print's Bulbasaur's name and height to the console if the conditions are met//
+    if (pokemonList[i].height > 1.6) {
+      document.write(pokemonList[0].name + " (height: " + pokemonList[0].height + ") - Wow, that\'s big!");
+       //This print's Bulbasaur's name and height to the console if the conditions are met//
+   }
  }
