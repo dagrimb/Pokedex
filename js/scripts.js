@@ -9,10 +9,12 @@ function executeProgram() {
     return {
         getAll: function() {
             return pokemonList;
-    } 
-   
-   
-        )};
+    },
+        add: function(pokemon) {
+            pokemonList.push(pokemon);
+        } 
+    };
+});
     
 
     executeProgram();
