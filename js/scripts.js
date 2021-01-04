@@ -14,20 +14,21 @@
             pokemonList.push(pokemon);
         }
 
-        return {
-            getAll: getAll,
-            add: add
-        };
-
         function addListItem(pokemon) {
             let pokemonList = document.querySelector('.pokemon-list');
             let listItem = document.createElement('li');
             let button = document.createElement('button');
-            button.innerText = 'pokemon';
+            button.innerText = ;
             button.classList.add('pokemonButton');
             listItem.appendChild(button);
             pokemonList.appendChild(listItem);
         }
+
+        return {
+            getAll: getAll,
+            add: add,
+            addListItem: addListItem
+        };
 
     })();
     
