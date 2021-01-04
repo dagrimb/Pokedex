@@ -14,12 +14,11 @@ function executeProgram() {
         pokemonList.push(pokemon);
     }
 
-
-    
-
-        } 
-    )};
-});
+    return {
+        getAll: getAll,
+        add: add
+    };
+})();
     
 
     executeProgram();
@@ -35,7 +34,4 @@ function executeProgram() {
             //This writes Pokemon's height next to it's name//
         }
     });
-
-
-
-
+}
