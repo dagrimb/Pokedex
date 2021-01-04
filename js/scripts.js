@@ -20,10 +20,9 @@ function executeProgram() {
     };
 })();
     
-
     executeProgram();
 
-
+    console.log(pokemonRepository.getAll());
 
     pokemonList.forEach(function(pokemon) {
         if (pokemon.height > 1.6) {
