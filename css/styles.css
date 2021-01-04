@@ -8,5 +8,10 @@ body {
 }
 
 .pokemonButton {
-    border: 10px coral;   
+    background-color: coral;
+    border: blue;
+    color: blue;
+    padding: 16px 32px;   
+    text-align: center;
+    margin: 4px 2px;
 }
