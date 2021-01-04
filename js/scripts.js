@@ -22,14 +22,13 @@
     
         pokemonRepository.getAll().forEach(function(pokemon) {
    
+            let unorderedList = document.querySelector('ul');
+
+
             if (pokemon.height > 1.6) {
-                document.write("<p>" + pokemon.name + " (height: " + pokemon.height + ") - Wow, that\'s big!</p>");
-                //This print's Bulbasaur's name and height to the console if the conditions are met//
-            } else {
-                document.write("<p>" + pokemon.name + " (height: " + pokemon.height + ") </p>");
-                //This writes Pokemon's height next to it's name//
+                let listItem = document.createElement('li');
+                
             }
 
-            let unorderedList = document.querySelector('ul');
         });
 
