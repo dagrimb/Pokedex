@@ -31,5 +31,6 @@
                 button.innerText = pokemon.name;
                 button.classList.add('pokemonButton')
                 listItem.appendChild(button);
+                unorderedList.appendChild(button);
         });
 
