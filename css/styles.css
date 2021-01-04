@@ -6,3 +6,7 @@ body {
     color: #0000CD;   
     display: block;
 }
+
+.pokemonButton {
+    border: 10px coral;   
+}
