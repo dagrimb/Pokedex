@@ -22,15 +22,12 @@
     
         pokemonRepository.getAll().forEach(function(pokemon) {
    
-            let unorderedList = document.querySelector('ul');
-
-
-            if (pokemon.height > 1.6) {
-                let listItem = document.createElement('li');
-                let button = document.createElement('button');
-                button.innerText = pokemon.name;
-                button.classList.add('pokemonButton')
-                listItem.appendChild(button);
-                unorderedList.appendChild(button);
+            let pokemonList = document.querySelector('.pokemon-list');
+            let listItem = document.createElement('li');
+            let button = document.createElement('button');
+            button.innerText = "placeholder";
+            button.classList.add('pokemonButton');
+            listItem.appendChild(button);
+            pokemonList.appendChild(listItem);
         });
 
