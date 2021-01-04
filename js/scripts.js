@@ -18,6 +18,11 @@
             getAll: getAll,
             add: add
         };
+
+        function addListItem() {
+
+        }
+
     })();
     
         pokemonRepository.getAll().forEach(function(pokemon) {
