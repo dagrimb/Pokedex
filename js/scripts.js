@@ -6,7 +6,10 @@ function executeProgram() {
         {name: 'Golbat', height: 1.6, types: ['ground', 'rock', 'electric', 'ice', 'psychic']},
         {name: 'Shellder', height: 0.3, types: ['grass', 'electric']}];
    
-   
+    return {
+        getAll: function() {
+            return pokemonList;
+    } 
    
    
         )};
