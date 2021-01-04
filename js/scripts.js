@@ -42,9 +42,7 @@ for (let i = 1; i < pokemonList.length; i++ {
         };
     })();
     
-    pokemonRepository.getAll();
-
-        pokemonList.forEach(function(pokemon) {
+        pokemonRepository.getAll().forEach(function(pokemon) {
             if (pokemon.height > 1.6) {
                 document.write("<p>" + pokemon.name + " (height: " + pokemon.height + ") - Wow, that\'s big!</p>");
                 //This print's Bulbasaur's name and height to the console if the conditions are met//
