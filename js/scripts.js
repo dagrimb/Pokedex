@@ -19,7 +19,7 @@
             add: add
         };
 
-        function addListItem() {
+        function addListItem(pokemon) {
 
         }
 
