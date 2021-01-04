@@ -20,13 +20,6 @@
         };
 
         function addListItem(pokemon) {
-
-        }
-
-    })();
-    
-        pokemonRepository.getAll().forEach(function(pokemon) {
-   
             let pokemonList = document.querySelector('.pokemon-list');
             let listItem = document.createElement('li');
             let button = document.createElement('button');
@@ -34,5 +27,12 @@
             button.classList.add('pokemonButton');
             listItem.appendChild(button);
             pokemonList.appendChild(listItem);
+        }
+
+    })();
+    
+        pokemonRepository.getAll().forEach(function(pokemon) {
+   
+
         });
 
