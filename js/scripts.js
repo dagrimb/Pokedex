@@ -68,8 +68,12 @@
     
     })();
 
+        pokemonRespository.loadList().then(function() {
+            // fetches data from the API and adds each Pokemon in the fetched data to array via add()
+        
+
         pokemonRepository.getAll().forEach(function(pokemon) {
             pokemonRepository.addListItem(pokemon);
 
         });
-
+    });
