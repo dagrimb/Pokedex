@@ -24,6 +24,10 @@
             pokemonList.appendChild(listItem);
         }
 
+        function showDetails(pokemon) {
+            console.log(pokemon);
+        }
+
         return {
             getAll: getAll,
             add: add,
