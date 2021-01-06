@@ -5,7 +5,9 @@
         let pokemonList = [{name: 'Bulbasaur', height: 7, types: ['grass', 'poison']}, 
         {name: 'Golbat', height: 1.6, types: ['ground', 'rock', 'electric', 'ice', 'psychic']},
         {name: 'Shellder', height: 0.3, types: ['grass', 'electric']}];
-   //List of all pokemon
+        //List of all pokemon
+
+        let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
         function getAll() {
             return pokemonList; 
@@ -40,7 +42,23 @@
             addListener(button, pokemon);
             }
         //Create button
-        
+
+        function loadList() {
+            return fetch(apiUrl).then(function (response) {
+                return response.json();
+            }).then(function (json) {
+                json.results.forEach(function (item) {
+                    let pokemon = {
+                        name: item.name,
+                        detailsUrl: item.url
+                    };
+                    add(pokemon);
+                });
+                }).catch(function (e) {
+                    console.error(e);
+            })
+        }
+
         return {
             getAll: getAll,
             add: add,
