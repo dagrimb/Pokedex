@@ -63,6 +63,7 @@
             getAll: getAll,
             add: add,
             addListItem: addListItem,
+            loadList: loadList
         };
     
     })();
