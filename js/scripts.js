@@ -20,8 +20,10 @@
         //Adds pokemon to array
 
         function showDetails(pokemon) {
+            loadDetails(pokemon).then(function () {
             console.log(pokemon);
-        }
+        });
+    }
         //Logs details of pokemon to the JS console
 
         function addListener(button, pokemon) {
