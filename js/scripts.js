@@ -1,33 +1,13 @@
 
-<<<<<<< HEAD
-let pokemonList = [{name: 'Bulbasaur', height: 7, types: ['grass', 'poison']}, 
-                {name: 'Golbat', height: 1.6, types: ['ground', 'rock', 'electric', 'ice', 'psychic']},
-                {name: 'Shellder', height: 0.3, types: ['grass', 'electric']}];
-
-<<<<<<< HEAD
-
-for (let i = 1; i < pokemonList.length; i++ {
-    if (pokemonList[i].height === 7 && pokemonList[i].types === 'grass' && 'poison') {
-        console.log(pokemonList[i].height + "is Bulbasaur");
-=======
-    for (var i = 0; i < pokemonList.length; i++) {
-        if (pokemonList[i].height > 1.6) {
-            document.write("<p>" + pokemonList[i].name + " (height: " + pokemonList[i].height + ") - Wow, that\'s big!</p>");
-            //This print's Bulbasaur's name and height to the console if the conditions are met//
-        } else {
-            document.write("<p>" + pokemonList[i].name + " (height: " + pokemonList[i].height + ") </p>");
-            //This writes Pokemon's height next to it's name//
->>>>>>> main
-    }
-}
-=======
 
 
     let pokemonRepository = (function () {
         let pokemonList = [{name: 'Bulbasaur', height: 7, types: ['grass', 'poison']}, 
         {name: 'Golbat', height: 1.6, types: ['ground', 'rock', 'electric', 'ice', 'psychic']},
         {name: 'Shellder', height: 0.3, types: ['grass', 'electric']}];
-   //List of all pokemon
+        //List of all pokemon
+
+        let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
         function getAll() {
             return pokemonList; 
@@ -40,8 +20,10 @@ for (let i = 1; i < pokemonList.length; i++ {
         //Adds pokemon to array
 
         function showDetails(pokemon) {
+            loadDetails(pokemon).then(function () {
             console.log(pokemon);
-        }
+        });
+    }
         //Logs details of pokemon to the JS console
 
         function addListener(button, pokemon) {
@@ -62,18 +44,54 @@ for (let i = 1; i < pokemonList.length; i++ {
             addListener(button, pokemon);
             }
         //Create button
-        
+
+        function loadList() {
+            return fetch(apiUrl).then(function (response) {
+                return response.json();
+            }).then(function (json) {
+                json.results.forEach(function (item) {
+                    let pokemon = {
+                        name: item.name,
+                        detailsUrl: item.url
+                    };
+                    add(pokemon);
+                });
+                }).catch(function (e) {
+                    console.error(e);
+            })
+        }
+        //Fetch data from pokemon API
+
+        function loadDetails (item) {
+            let url = item.detailsUrl;
+            return fetch(url).then(function (response) {
+                return response.json();
+            }).then(function (details) {
+                //add pokemon details to the item
+                item.imageUrl = details.sprites.front_default;
+                item.height = details.height;
+                item.types = details.types;
+            }).catch(function (e) {
+                console.error(e);
+            });
+        }
+
         return {
             getAll: getAll,
             add: add,
             addListItem: addListItem,
+            loadList: loadList,
+            loadDetails: loadDetails
         };
     
     })();
+
+        pokemonRepository.loadList().then(function() {
+            // fetches data from the API and adds each Pokemon in the fetched data to array via add()
+        
 
         pokemonRepository.getAll().forEach(function(pokemon) {
             pokemonRepository.addListItem(pokemon);
 
         });
->>>>>>> main
-
+    });
