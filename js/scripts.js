@@ -86,7 +86,7 @@
     
     })();
 
-        pokemonRespository.loadList().then(function() {
+        pokemonRepository.loadList().then(function() {
             // fetches data from the API and adds each Pokemon in the fetched data to array via add()
         
 
