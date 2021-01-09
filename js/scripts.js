@@ -43,7 +43,12 @@
         //Create button
 
         function showLoadingMessage() {
+            let loadingMessage = console.log('Loading');
+            return loadingMessage;
+        }
 
+        function hideLoadingMessage() {
+            loadingmessage = null;
         }
 
         function loadList() {
