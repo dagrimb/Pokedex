@@ -42,7 +42,12 @@
             }
         //Create button
 
+        function showLoadingMessage() {
+
+        }
+
         function loadList() {
+            showLoadingMessage();
             return fetch(apiUrl).then(function (response) {
                 return response.json();
             }).then(function (json) {
@@ -60,6 +65,7 @@
         //Fetch data from pokemon API
 
         function loadDetails (item) {
+            showLoadingMessage();
             let url = item.detailsUrl;
             return fetch(url).then(function (response) {
                 return response.json();
