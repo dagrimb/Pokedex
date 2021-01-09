@@ -48,7 +48,7 @@
         }
 
         function hideLoadingMessage() {
-            loadingmessage = null;
+            loadingMessage = null;
         }
 
         function loadList() {
@@ -62,9 +62,11 @@
                         detailsUrl: item.url
                     };
                     add(pokemon);
+                    hideLoadingMessage();
                 });
                 }).catch(function (e) {
                     console.error(e);
+                    hideLoadingMessage();
             })
         }
         //Fetch data from pokemon API
@@ -79,8 +81,10 @@
                 item.imageUrl = details.sprites.front_default;
                 item.height = details.height;
                 item.types = details.types;
+                hideLoadingMessage();
             }).catch(function (e) {
                 console.error(e);
+                hideLoadingMessage();
             });
         }
 
