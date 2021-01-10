@@ -2,10 +2,7 @@
 
 
     let pokemonRepository = (function () {
-        let pokemonList = [{name: 'Bulbasaur', height: 7, types: ['grass', 'poison']}, 
-        {name: 'Golbat', height: 1.6, types: ['ground', 'rock', 'electric', 'ice', 'psychic']},
-        {name: 'Shellder', height: 0.3, types: ['grass', 'electric']}];
-        //List of all pokemon
+        let pokemonList = [];
 
         let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
@@ -26,8 +23,18 @@
     }
         //Logs details of pokemon to the JS console
 
+        function showLoadingMessage() {
+            let loadingMessage = console.log("Loading...");
+            };            
+        //Create loading message
+
+        function hideLoadingMessage() {
+            let loadingMessage = null;
+        }
+
         function addListener(button, pokemon) {
             button.addEventListener('click', function (event) {
+                showLoadingMessage();
                 showDetails(pokemon);
             })
         }
@@ -45,7 +52,14 @@
             }
         //Create button
 
+      
+
+        function hideLoadingMessage() {
+
+        }
+
         function loadList() {
+            showLoadingMessage();
             return fetch(apiUrl).then(function (response) {
                 return response.json();
             }).then(function (json) {
@@ -55,14 +69,17 @@
                         detailsUrl: item.url
                     };
                     add(pokemon);
+                    hideLoadingMessage();
                 });
                 }).catch(function (e) {
                     console.error(e);
+                    hideLoadingMessage();
             })
         }
         //Fetch data from pokemon API
 
         function loadDetails (item) {
+            showLoadingMessage();
             let url = item.detailsUrl;
             return fetch(url).then(function (response) {
                 return response.json();
@@ -71,8 +88,10 @@
                 item.imageUrl = details.sprites.front_default;
                 item.height = details.height;
                 item.types = details.types;
+                hideLoadingMessage();
             }).catch(function (e) {
                 console.error(e);
+                hideLoadingMessage();
             });
         }
 
