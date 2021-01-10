@@ -23,8 +23,18 @@
     }
         //Logs details of pokemon to the JS console
 
+        function showLoadingMessage() {
+            let loadingMessage = console.log("Loading...");
+            };            
+        //Create loading message
+
+        function hideLoadingMessage() {
+            let loadingMessage = null;
+        }
+
         function addListener(button, pokemon) {
             button.addEventListener('click', function (event) {
+                showLoadingMessage();
                 showDetails(pokemon);
             })
         }
@@ -42,13 +52,10 @@
             }
         //Create button
 
-        function showLoadingMessage() {
-            let loadingMessage = console.log('Loading');
-            return loadingMessage;
-        }
+      
 
         function hideLoadingMessage() {
-            loadingMessage = null;
+
         }
 
         function loadList() {
