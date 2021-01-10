@@ -52,11 +52,6 @@
             }
         //Create button
 
-      
-
-        function hideLoadingMessage() {
-
-        }
 
         function loadList() {
             showLoadingMessage();
