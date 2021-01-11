@@ -134,8 +134,12 @@
                     showModal('*Modal title placeholder', 'Modal content placeholder');
                 });
 
+                window.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
+                        hideModal();
+                    }
            }); 
-
+        })
 
         return {
             getAll: getAll,
