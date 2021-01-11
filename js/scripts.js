@@ -130,7 +130,9 @@
                     }
                 }
 
-                
+                document.querySelector('#show-modal').addEventListener('click', () => {
+                    showModal('*Modal title placeholder', 'Modal content placeholder');
+                });
 
            }); 
 
