@@ -124,11 +124,13 @@
                 function hideModal() {
                     modalContainer.classList.remove('is-visible');
 
-                if (dialogPromiseReject) {
-                    dialogPromiseReject();
-                    dialogPromiseReject = null;
+                    if (dialogPromiseReject) {
+                        dialogPromiseReject();
+                        dialogPromiseReject = null;
+                    }
                 }
-                }
+
+                
 
            }); 
 
