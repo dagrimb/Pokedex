@@ -119,12 +119,19 @@
 
                 modalContainer.classList.add('is-visible');
             }
+                //Hide Modal
 
+                function hideModal() {
+                    modalContainer.classList.remove('is-visible');
+
+                if (dialogPromiseReject) {
+                    dialogPromiseReject();
+                    dialogPromiseReject = null;
+                }
+                }
 
            }); 
 
-
-        //Create modal
 
         return {
             getAll: getAll,
