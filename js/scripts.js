@@ -90,6 +90,24 @@
             });
         }
 
+        //Create the modal
+        (function () {
+            let modalContainer = document.querySelector('#modal-container');
+        
+           function showModal(title, text) {
+                modalContainer.innerHTML = '';
+
+                let modal = document.createElement('div');
+                modal.classList.add('modal');
+        
+        }
+
+
+           } 
+
+
+        //Create modal
+
         return {
             getAll: getAll,
             add: add,
