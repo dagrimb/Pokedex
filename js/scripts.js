@@ -129,16 +129,21 @@
                         dialogPromiseReject = null;
                     }
                 }
-
+                
+                //Show modal modal title and content upon click event
                 document.querySelector('#show-modal').addEventListener('click', () => {
                     showModal('*Modal title placeholder', 'Modal content placeholder');
                 });
 
+                //Hide Modal when esc key is clicked
                 window.addEventListener('keydown', (e) => {
                     if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
                         hideModal();
                     }
            }); 
+
+
+
         })
 
         return {
