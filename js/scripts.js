@@ -139,11 +139,15 @@
                 window.addEventListener('keydown', (e) => {
                     if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
                         hideModal();
-                    }
-           }); 
+                }
+            }); 
 
-
-
+            modalContainer.addEventListener('click', (e) => {
+                let target = e.target;
+                if (target === modalContainer) {
+                    hideModal();
+                }
+            });
         })
 
         return {
