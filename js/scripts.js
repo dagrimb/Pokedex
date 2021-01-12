@@ -60,7 +60,7 @@
             loadDetails(pokemon).then(function () {
               //Show modal modal title and content upon click event
               document.querySelector('#show-modal').addEventListener('click', () => {
-                showModal('*Modal title placeholder', 'Modal content placeholder');
+                showModal(pokemon);
             });
         });
     }
@@ -93,7 +93,7 @@
             pokemonList.appendChild(listItem);
             addListener(button, pokemon);
             }
-        //Create button
+            //Create button
 
 
         function loadList() {
@@ -112,7 +112,7 @@
                 }).catch(function (e) {
                     console.error(e);
                     hideLoadingMessage();
-            })
+            });
         }
         //Fetch data from pokemon API
 
@@ -132,11 +132,6 @@
                 hideLoadingMessage();
             });
         }
-
-
-                
-              
-
                 //Hide Modal when esc key is clicked
                 window.addEventListener('keydown', (e) => {
                     if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
