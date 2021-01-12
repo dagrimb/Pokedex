@@ -6,15 +6,15 @@
 
         let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
+        //Returns array of all pokemon
         function getAll() {
             return pokemonList; 
         }
-        //Returns array of all pokemon
-
+        
+        //Adds pokemon to array
         function add(pokemon) {
             pokemonList.push(pokemon);
         }
-        //Adds pokemon to array
 
         //Create the modal
         (function () {
