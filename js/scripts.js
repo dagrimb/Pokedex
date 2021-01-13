@@ -18,7 +18,7 @@
 
         function showDetails(pokemon) {
             loadDetails(pokemon).then(function () {
-
+            console.log(pokemon);
             });
         }
         //Logs details of pokemon to the JS console
@@ -52,23 +52,23 @@
             }
             //Create button
 
-            function loadList() {
-                showLoadingMessage();
-                return fetch(apiUrl).then(function (response) {
-                    return response.json();
-                }).then(function (json) {
-                    json.results.forEach(function (item) {
-                        let pokemon = {
-                            name: item.name,
-                            detailsUrl: item.url
-                        };
+        function loadList() {
+            showLoadingMessage();
+            return fetch(apiUrl).then(function (response) {
+                return response.json();
+            }).then(function (json) {
+                json.results.forEach(function (item) {
+                    let pokemon = {
+                        name: item.name,
+                        detailsUrl: item.url
+                    };
                         add(pokemon);
                         hideLoadingMessage();
                     });
                     }).catch(function (e) {
                         console.error(e);
                         hideLoadingMessage();
-                });
+                })
             }
             //Fetch data from pokemon API
 
@@ -100,7 +100,7 @@
                 modal.classList.add('modal');
         
                 // Add the new modal content
-                let closeButtonElement = document.createElement(button);
+                let closeButtonElement = document.createElement('button');
                 closeButtonElement.classList.add('modal-close');
                 closeButtonElement.innerText = 'Close';
                 closeButtonElement.addEventListener('click', hideModal);
@@ -122,11 +122,6 @@
                 //Hide Modal
                 function hideModal() {
                     modalContainer.classList.remove('is-visible');
-
-                    if (dialogPromiseReject) {
-                        dialogPromiseReject();
-                        dialogPromiseReject = null;
-                    };
                 }
 
               //Show modal modal title and content upon click event
@@ -147,7 +142,7 @@
                         hideModal();
                     }
                 });
-            })
+            })();
 
             return {
                 getAll: getAll,
