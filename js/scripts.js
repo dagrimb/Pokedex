@@ -18,10 +18,7 @@
 
         function showDetails(pokemon) {
             loadDetails(pokemon).then(function () {
-              //Show modal modal title and content upon click event
-              document.querySelector('#show-modal').addEventListener('click', () => {
-                showModal(pokemon);
-                });
+
             });
         }
         //Logs details of pokemon to the JS console
@@ -129,8 +126,13 @@
                     if (dialogPromiseReject) {
                         dialogPromiseReject();
                         dialogPromiseReject = null;
-                    }
+                    };
                 }
+
+              //Show modal modal title and content upon click event
+              document.querySelector('#show-modal').addEventListener('click', () => {
+                    showModal('Modal title', 'Modal content!');
+                });
 
                 //Hide Modal when esc key is clicked
                 window.addEventListener('keydown', (e) => {
