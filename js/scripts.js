@@ -1,7 +1,7 @@
 
 
 
-    let pokemonRepository = (function () {
+    let pokemonRepository =(function () {
         let pokemonList = [];
 
         let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
@@ -16,30 +16,33 @@
             pokemonList.push(pokemon);
         }
 
+        //Logs details of pokemon to the modal and console
         function showDetails(pokemon) {
             loadDetails(pokemon).then(function () {
-            console.log(pokemon);
+                console.log(pokemon);
+                showModal(pokemon.name, pokemon.height);
             });
         }
-        //Logs details of pokemon to the JS console
-
+        
+        //Create loading message
         function showLoadingMessage() {
             let loadingMessage = console.log("Loading...");
         };            
-        //Create loading message
-
+        
+        //Hide loading message
         function hideLoadingMessage() {
             let loadingMessage = null;
         }
 
+        //Show details of pokemon in he JS console when pokemon is clicked in the UI
         function addListener(button, pokemon) {
             button.addEventListener('click', function (event) {
-                showLoadingMessage();
-                showDetails(pokemon);
+            showDetails(pokemon);
+            showModal(title, text);
             })
         }
-        //Show details of pokemon in he JS console when pokemon is clicked in the UI
 
+        //Create button
         function addListItem(pokemon) {
             let pokemonList = document.querySelector('.pokemon-list');
             let listItem = document.createElement('li');
@@ -50,8 +53,8 @@
             pokemonList.appendChild(listItem);
             addListener(button, pokemon);
             }
-            //Create button
 
+        //Fetch data from pokemon API
         function loadList() {
             showLoadingMessage();
             return fetch(apiUrl).then(function (response) {
@@ -70,8 +73,7 @@
                         hideLoadingMessage();
                 })
             }
-            //Fetch data from pokemon API
-
+            
             function loadDetails (item) {
                 showLoadingMessage();
                 let url = item.detailsUrl;
@@ -94,6 +96,7 @@
                 let modalContainer = document.querySelector('#modal-container');
         
                 function showModal(title, text) {
+                let modalContainer = document.querySelector('#modal-container');
                 modalContainer.innerHTML = '';
 
                 let modal = document.createElement('div');
@@ -117,17 +120,11 @@
                 modalContainer.appendChild(modal);
 
                 modalContainer.classList.add('is-visible');
-            }
-
+            
                 //Hide Modal
                 function hideModal() {
                     modalContainer.classList.remove('is-visible');
                 }
-
-              //Show modal modal title and content upon click event
-              document.querySelector('#show-modal').addEventListener('click', () => {
-                    showModal('Modal title', 'Modal content!');
-                });
 
                 //Hide Modal when esc key is clicked
                 window.addEventListener('keydown', (e) => {
@@ -140,33 +137,27 @@
                     let target = e.target;
                     if (target === modalContainer) {
                         hideModal();
-                    }
+                    }   
                 });
-            })();
-
+            }
+       
             return {
                 getAll: getAll,
                 add: add,
                 addListItem: addListItem,
                 loadList: loadList,
-                loadDetails: loadDetails
+                loadDetails: loadDetails,
+                addListener: addListener,
+                showModal: showModal
             };
-        })();
+        })
+    })
 
-        pokemonRepository.loadList().then(function() {
-            // fetches data from the API and adds each Pokemon in the fetched data to array via add()
+       pokemonRepository.loadList().then(function() {
+            //fetches data from the API and adds each Pokemon in the fetched data to array via add()
         
             pokemonRepository.getAll().forEach(function(pokemon) {
                 pokemonRepository.addListItem(pokemon);
             });
         });
-
-         
-
-
-
-
-       
-
-
-           
+ 
