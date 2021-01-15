@@ -92,10 +92,7 @@
             }
 
             //Create the modal
-            (function () {
-                let modalContainer = document.querySelector('#modal-container');
-        
-                function showModal(title, text) {
+            function showModal(title, text) {
                 let modalContainer = document.querySelector('#modal-container');
                 modalContainer.innerHTML = '';
 
@@ -120,7 +117,8 @@
                 modalContainer.appendChild(modal);
 
                 modalContainer.classList.add('is-visible');
-            
+            };
+
                 //Hide Modal
                 function hideModal() {
                     modalContainer.classList.remove('is-visible');
@@ -139,7 +137,7 @@
                         hideModal();
                     }   
                 });
-            }
+        
        
             return {
                 getAll: getAll,
@@ -150,8 +148,7 @@
                 addListener: addListener,
                 showModal: showModal
             };
-        })
-    })
+        });
 
        pokemonRepository.loadList().then(function() {
             //fetches data from the API and adds each Pokemon in the fetched data to array via add()
