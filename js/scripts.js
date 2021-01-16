@@ -20,7 +20,7 @@
         function showDetails(pokemon) {
             loadDetails(pokemon).then(function () {
                 console.log(pokemon);
-                showModal(pokemon.name, pokemon.height);
+                showModal(pokemon.name, pokemon.height, pokemon.imageUrl);
             });
         }
         
@@ -91,7 +91,7 @@
             }
 
             //Create the modal
-            function showModal(title, text) {
+            function showModal(title, text, image) {
                 let modalContainer = document.querySelector('#modal-container');
                 modalContainer.innerHTML = '';
 
@@ -149,7 +149,7 @@
                 addListener: addListener,
                 showModal: showModal
             };
-        });
+        })();
 
        pokemonRepository.loadList().then(function() {
             //fetches data from the API and adds each Pokemon in the fetched data to array via add()
