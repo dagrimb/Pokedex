@@ -132,12 +132,12 @@
                     }
                 }); 
 
-                modalContainer.addEventListener('click', (e) => {
+                /*modalContainer.addEventListener('click', (e) => {
                     let target = e.target;
                     if (target === modalContainer) {
                         hideModal();
                     }   
-                });
+                });*/
         
        
             return {
