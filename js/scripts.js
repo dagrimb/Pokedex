@@ -109,10 +109,14 @@
 
                 let contentElement = document.createElement('p');
                 contentElement.innerText = text;
+
+                let imageElement = document.createElement('img');
+                imageElement.src = image;
        
                 modal.appendChild(closeButtonElement);
                 modal.appendChild(titleElement);
                 modal.appendChild(contentElement);
+                modal.appendChild(imageElement);
                 modalContainer.appendChild(modal);
 
                 modalContainer.classList.add('is-visible');
