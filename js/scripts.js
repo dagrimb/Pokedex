@@ -38,7 +38,6 @@
         function addListener(button, pokemon) {
             button.addEventListener('click', function (event) {
             showDetails(pokemon);
-            showModal(title, text);
             })
         }
 
