@@ -47,8 +47,10 @@
             let listItem = document.createElement('li');
             $("li").addClass("group-list-item");
             let button = document.createElement('button');
+            $("button").addClass("btn btn-primary");
             button.innerText = pokemon.name;
             button.classList.add('pokemonButton');
+
             listItem.appendChild(button);
             pokemonList.appendChild(listItem);
             addListener(button, pokemon);
