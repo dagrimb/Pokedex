@@ -95,6 +95,11 @@
 
             //Create the modal
             function showModal(title, text, image) {
+                let modalBody = $(".modal-body");
+                let modalTitle = $(".modal-title");
+                let modalHeader = $(".modal-header");    
+
+
                 let modalContainer = document.querySelector('#modal-container');
                 modalContainer.innerHTML = '';
 
