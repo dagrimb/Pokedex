@@ -45,6 +45,7 @@
         function addListItem(pokemon) {
             let pokemonList = document.querySelector('.pokemon-list');
             let listItem = document.createElement('li');
+            $(li).addClass("group-list-item");
             let button = document.createElement('button');
             button.innerText = pokemon.name;
             button.classList.add('pokemonButton');
