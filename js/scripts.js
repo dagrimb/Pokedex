@@ -43,16 +43,13 @@
 
         //Create button
         function addListItem(pokemon) {
-            let pokemonList = document.querySelector('.pokemon-list');
-            let listItem = document.createElement('li');
-            $("li").addClass("group-list-item");
-            let button = document.createElement('button');
-            $("button").addClass("btn btn-primary");
+            let pokemonList = $('.pokemon-list');
+            let listItem = $('<li class="group-list-item"></li');
+            let button = $('<button class="btn btn-primary"></button>'); 
             button.innerText = pokemon.name;
-            button.classList.add('pokemonButton');
-
-            listItem.appendChild(button);
-            pokemonList.appendChild(listItem);
+            button.addClass('pokemonButton');
+            listItem.append(button);
+            pokemonList.append(listItem);
             addListener(button, pokemon);
             }
 
