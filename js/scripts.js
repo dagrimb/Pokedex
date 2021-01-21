@@ -103,6 +103,9 @@
                 modalTitle.empty();
                 modalBody.empty();
 
+                //define element for modal's name
+                let nameElement = $("<h1>" + item.name + "</h1");
+
 
                 let modalContainer = document.querySelector('#modal-container');
                 modalContainer.innerHTML = '';
