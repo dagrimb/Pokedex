@@ -115,6 +115,9 @@
                 //define element for modal's height
                 let heightElement = $("<p>" + "height : " + item.height + "<p>");
 
+                //define element for modal's weight
+                let weightElement = $("<p>" + "weight : " + item.weight + "</p>");
+
                 let modalContainer = document.querySelector('#modal-container');
                 modalContainer.innerHTML = '';
 
