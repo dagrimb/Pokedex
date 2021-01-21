@@ -97,7 +97,11 @@
             function showModal(title, text, image) {
                 let modalBody = $(".modal-body");
                 let modalTitle = $(".modal-title");
-                let modalHeader = $(".modal-header");    
+                let modalHeader = $(".modal-header");
+                
+                //Empty modal's title and body to make sure it clears each time that you open it
+                modalTitle.empty();
+                modalBody.empty();
 
 
                 let modalContainer = document.querySelector('#modal-container');
