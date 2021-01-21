@@ -121,6 +121,9 @@
                 //define element for modal's types
                 let typeselement = $("<p>" + "types : " + item.types + "</p>");
 
+                //define element for modal's abilities
+                let abilitiesElement = $("<p>" + "abilities : " + item.abilities + "</p>");
+
                 let modalContainer = document.querySelector('#modal-container');
                 modalContainer.innerHTML = '';
 
