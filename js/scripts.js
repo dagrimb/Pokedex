@@ -36,9 +36,9 @@
 
         //Show details of pokemon in he JS console when pokemon is clicked in the UI
         function addListener(button, pokemon) {
-            button.addEventListener('click', function (event) {
+            $('button').on("click", function (event) {
             showDetails(pokemon);
-            })
+            });
         }
 
         //Create button
