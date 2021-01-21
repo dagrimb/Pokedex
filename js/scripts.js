@@ -119,10 +119,19 @@
                 let weightElement = $("<p>" + "weight : " + item.weight + "</p>");
 
                 //define element for modal's types
-                let typeselement = $("<p>" + "types : " + item.types + "</p>");
+                let typesElement = $("<p>" + "types : " + item.types + "</p>");
 
                 //define element for modal's abilities
                 let abilitiesElement = $("<p>" + "abilities : " + item.abilities + "</p>");
+
+                //append name element to modal title and other elements to modal's body
+                modalTitle.append(nameElement);
+                modalBody.append(imageElementFront);
+                modalBody.append(imageElementBack);
+                modalBody.append(heightElement);
+                modalBody.append(weightElement);
+                modalBody.append(typesElement);
+                modalBody.append(abilitiesElement);
 
                 let modalContainer = document.querySelector('#modal-container');
                 modalContainer.innerHTML = '';
