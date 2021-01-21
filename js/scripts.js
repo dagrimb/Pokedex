@@ -112,6 +112,9 @@
                 let imageElementBack = $('<img class="modal-img" style="width:50%">');
                 imageElementBack.attr("src", item.imageUrlBack);
 
+                //define element for modal's height
+                let heightElement = $("<p>" + "height : " + item.height + "<p>");
+
                 let modalContainer = document.querySelector('#modal-container');
                 modalContainer.innerHTML = '';
 
