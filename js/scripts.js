@@ -45,8 +45,8 @@
         function addListItem(pokemon) {
             let pokemonList = $('.pokemon-list');
             let listItem = $('<li class="group-list-item"></li');
-            let button = $('<button class="btn btn-primary"></button>'); 
-            button.innerText = pokemon.name;
+            let $button = $('<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"></button>'); 
+            $( "button" ).text = pokemon.name;
             button.addClass('pokemonButton');
             listItem.append(button);
             pokemonList.append(listItem);
