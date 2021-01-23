@@ -100,6 +100,8 @@
                 $(modalContainer).html('');
 
                 let modal = $('.modal-content');
+
+                let modalHeader = $('.modal-header');
         
                 // Add the new modal content
                 let closeButtonElement = $('close');
@@ -107,6 +109,9 @@
 
                 let titleElement = $('.modal-title');
                 $( "titleElement" ).text(title);
+
+
+                let modalBody = $('.modal-body');
 
                 let contentElement = document.createElement('p');
                 contentElement.innerText = text;
