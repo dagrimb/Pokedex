@@ -112,20 +112,13 @@
 
                 let modalBody = $('.modal-body');
                 $( "modalBody" ).text(text);
-
-                let contentElement = document.createElement('p');
-                contentElement.innerText = text;
-
-                let imageElement = document.createElement('img');
-                imageElement.src = image;
        
-                modal.appendChild(closeButtonElement);
-                modal.appendChild(titleElement);
-                modal.appendChild(contentElement);
-                modal.appendChild(imageElement);
-                modalContainer.appendChild(modal);
+                modal-header.append(closeButtonElement);
+                modal-title.append(titleElement);
+                modal.append(contentElement);
+                modalBody.append(imageElement);
+                modalContainer.append(modal);
 
-                modalContainer.classList.add('is-visible');
             };
 
                 //Hide Modal
