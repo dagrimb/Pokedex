@@ -110,8 +110,8 @@
                 let titleElement = $('.modal-title');
                 $( "titleElement" ).text(title);
 
-
                 let modalBody = $('.modal-body');
+                $( "modalBody" ).text(text);
 
                 let contentElement = document.createElement('p');
                 contentElement.innerText = text;
