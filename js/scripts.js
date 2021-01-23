@@ -96,12 +96,10 @@
             //Create the modal
             function showModal(title, text, image) {
 
-
                 let modalContainer = $('.modal fade');
                 $(modalContainer).html('');
 
-                let modal = document.createElement('div');
-                modal.classList.add('modal');
+                let modal = $('.modal-content');
         
                 // Add the new modal content
                 let closeButtonElement = document.createElement('button');
@@ -109,8 +107,8 @@
                 closeButtonElement.innerText = 'Close';
                 closeButtonElement.addEventListener('click', hideModal);
 
-                let titleElement = document.createElement('h1');
-                titleElement.innerText = title;
+                let titleElement = $('.modal-title');
+                $( "titleElement" ).text(title);
 
                 let contentElement = document.createElement('p');
                 contentElement.innerText = text;
