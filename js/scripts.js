@@ -20,7 +20,7 @@
         function showDetails(pokemon) {
             loadDetails(pokemon).then(function () {
                 console.log(pokemon);
-                showModal(pokemon.name, pokemon.height, pokemon.imageUrl);
+                showModal(pokemon);
             });
         }
         
@@ -61,9 +61,7 @@
         //Fetch data from pokemon API
         function loadList() {
             showLoadingMessage();
-            return fetch(apiUrl).then(function (response) {
-                return response.json();
-            }).then(function (json) {
+            return $.ajax(apiUrl).then(function (json) {
                 json.results.forEach(function (item) {
                     let pokemon = {
                         name: item.name,
@@ -81,9 +79,7 @@
             function loadDetails (item) {
                 showLoadingMessage();
                 let url = item.detailsUrl;
-                return fetch(url).then(function (response) {
-                    return response.json();
-                }).then(function (details) {
+                return $.ajax(url).then(function (details) {
                     //add pokemon details to the item
                     item.imageUrl = details.sprites.front_default;
                     item.height = details.height;
@@ -153,7 +149,6 @@
                 addListItem: addListItem,
                 loadList: loadList,
                 loadDetails: loadDetails,
-                addListener: addListener,
                 showModal: showModal
             };
         })();
