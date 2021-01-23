@@ -95,46 +95,10 @@
 
             //Create the modal
             function showModal(title, text, image) {
-                let modalBody = $(".modal-body");
-                let modalTitle = $(".modal-title");
-                let modalHeader = $(".modal-header");
-                
-                //Empty modal's title and body to make sure it clears each time that you open it
-                modalTitle.empty();
-                modalBody.empty();
 
-                //define element for modal's name
-                let nameElement = $("<h1>" + item.name + "</h1");
 
-                //define element for modal's image
-                let imageElementFront = $('<img class="modal-img" style="width:50%">');
-                imageElementFront.attr("src", item.imageUrlFront);
-                let imageElementBack = $('<img class="modal-img" style="width:50%">');
-                imageElementBack.attr("src", item.imageUrlBack);
-
-                //define element for modal's height
-                let heightElement = $("<p>" + "height : " + item.height + "<p>");
-
-                //define element for modal's weight
-                let weightElement = $("<p>" + "weight : " + item.weight + "</p>");
-
-                //define element for modal's types
-                let typesElement = $("<p>" + "types : " + item.types + "</p>");
-
-                //define element for modal's abilities
-                let abilitiesElement = $("<p>" + "abilities : " + item.abilities + "</p>");
-
-                //append name element to modal title and other elements to modal's body
-                modalTitle.append(nameElement);
-                modalBody.append(imageElementFront);
-                modalBody.append(imageElementBack);
-                modalBody.append(heightElement);
-                modalBody.append(weightElement);
-                modalBody.append(typesElement);
-                modalBody.append(abilitiesElement);
-
-                let modalContainer = document.querySelector('#modal-container');
-                modalContainer.innerHTML = '';
+                let modalContainer = $('.modal fade');
+                $(modalContainer).html('');
 
                 let modal = document.createElement('div');
                 modal.classList.add('modal');
