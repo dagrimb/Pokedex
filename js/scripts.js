@@ -34,12 +34,7 @@
             let loadingMessage = null;
         }
 
-        //Show details of pokemon in he JS console when pokemon is clicked in the UI
-        function addListener(button, pokemon) {
-            $('button').on("click", function (event) {
-            showDetails(pokemon);
-            });
-        }
+
 
         //Create button
         function addListItem(pokemon) {
@@ -53,8 +48,15 @@
                 listItem.append(button);
                 listItem.append(cardTitle);
                 pokemonList.append(listItem);
-            })
-        }
+
+                //Show details of pokemon in he JS console when pokemon is clicked in the UI
+                button.on("click", function (event) {
+                    showDetails(pokemon);
+                });
+            });
+        };        
+            
+        
 
         //Fetch data from pokemon API
         function loadList() {
@@ -118,6 +120,8 @@
                 modal.append(contentElement);
                 modalBody.append(imageElement);
                 modalContainer.append(modal);
+                
+
 
             };
 
