@@ -49,16 +49,12 @@
                 let listItem = $('<li class="group-list-item card-body"></li');
                 let cardTitle = $("<h5 class='card-title>" + pokemon.name + "</h5>");
                 let button = $("<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#exampleModal' >" + pokemon.name + "</button>"); 
-                $( "button" ).text = pokemon.name;
-                button.addClass('pokemonButton');
+                
                 listItem.append(button);
+                listItem.append(cardTitle);
                 pokemonList.append(listItem);
-                addListener(button, pokemon);
-                }
-
-
             })
-     
+        }
 
         //Fetch data from pokemon API
         function loadList() {
