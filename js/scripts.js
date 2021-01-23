@@ -46,7 +46,8 @@
             pokemonRepository.loadDetails(pokemon).then(function () {
                 let pokemonList = $('.pokemon-list');
                 pokemonList.addClass('list-group list-unstyled col-sm-6 card');    
-                let listItem = $('<li class=" group-list-item"></li');
+                let listItem = $('<li class="group-list-item card-body"></li');
+                let cardTitle = $("<h5 class='card-title>" + pokemon.name + "</h5>");
                 let $button = $("<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#exampleModal' >" + pokemon.name + "</button>"); 
                 $( "button" ).text = pokemon.name;
                 button.addClass('pokemonButton');
