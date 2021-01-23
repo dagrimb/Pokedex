@@ -44,19 +44,21 @@
         //Create button
         function addListItem(pokemon) {
             pokemonRepository.loadDetails(pokemon).then(function () {
+                let pokemonList = $('.pokemon-list');
+                pokemonList.addClass('list-group list-unstyled row');
 
+                let listItem = $('<li class="group-list-item"></li');
+                let $button = $("<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#exampleModal' >" + pokemon.name + "</button>"); 
+                $( "button" ).text = pokemon.name;
+                button.addClass('pokemonButton');
+                listItem.append(button);
+                pokemonList.append(listItem);
+                addListener(button, pokemon);
+                }
 
 
             })
-            let pokemonList = $('.pokemon-list');
-            let listItem = $('<li class="group-list-item"></li');
-            let $button = $("<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#exampleModal' >" + pokemon.name + "</button>"); 
-            $( "button" ).text = pokemon.name;
-            button.addClass('pokemonButton');
-            listItem.append(button);
-            pokemonList.append(listItem);
-            addListener(button, pokemon);
-            }
+     
 
         //Fetch data from pokemon API
         function loadList() {
