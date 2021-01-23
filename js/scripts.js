@@ -48,7 +48,7 @@
                 pokemonList.addClass('list-group list-unstyled col-sm-6 card');    
                 let listItem = $('<li class="group-list-item card-body"></li');
                 let cardTitle = $("<h5 class='card-title>" + pokemon.name + "</h5>");
-                let $button = $("<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#exampleModal' >" + pokemon.name + "</button>"); 
+                let button = $("<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#exampleModal' >" + pokemon.name + "</button>"); 
                 $( "button" ).text = pokemon.name;
                 button.addClass('pokemonButton');
                 listItem.append(button);
