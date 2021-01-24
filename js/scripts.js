@@ -18,9 +18,9 @@
 
         //Logs details of pokemon to the modal and console
         function showDetails(pokemon) {
-            loadDetails(pokemon).then(function () {
+            pokemonRepository.loadDetails(pokemon).then(function () {
                 console.log(pokemon);
-                showModal(pokemon);
+                showModal(title, text);
             });
         }
         
@@ -92,10 +92,9 @@
             }
 
             //Create the modal
-            function showModal(title, text, image) {
+            function showModal(title, text) {
 
-                let modalContainer = $('.modal fade');
-                $(modalContainer).html('');
+
 
                 let modal = $('.modal-content');
 
@@ -111,11 +110,11 @@
                 let modalBody = $('.modal-body');
                 $( "modalBody" ).text(text);
        
-                modal-header.append(closeButtonElement);
-                modal-title.append(titleElement);
-                modal.append(contentElement);
+                modalHeader.append(closeButtonElement);
+                modalHeader.append(titleElement);
+                modalBody.append(contentElement);
                 modalBody.append(imageElement);
-                modalContainer.append(modal);
+                modalBody.append(pokemonHeight);
                 
 
 
