@@ -115,7 +115,7 @@
                 $( "titleElement" ).text(title);
 
                 let modalBody = $('.modal-body');
-                $( "modalBody" ).text(text);
+
        
                 modalHeader.append(closeButtonElement);
                 modalHeader.append(titleElement);
