@@ -115,6 +115,8 @@
 
                 let titleElement = $("<h4>" + "name : " + pokemon.name + "</h4>");
 
+                let contentElement = $("<h2>" + "height : " + pokemon.height + "</h2>");
+                
                 let modalBody = $('.modal-body');
 
                 modalHeader.append(closeOption);
