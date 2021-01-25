@@ -103,8 +103,6 @@
                 let modalContainer = $('modal');
                 modalContainer.addClass('position-absolute');
 
-                let modal = $('.modal-content');
-
                 let modalHeader = $('.modal-header');
         
                 // Add the new modal content
@@ -112,11 +110,13 @@
 
                 let closeOption = $("<p>" + 'Close Profile' + "</p>");
 
-
                 let titleElement = $("<h4>" + "name : " + pokemon.name + "</h4>");
 
                 let contentElement = $("<h2>" + "height : " + pokemon.height + "</h2>");
-                
+
+                let imageElement = $('<img class="modal-img">');
+                imageElement.attr("src", pokemon.imageUrl);
+
                 let modalBody = $('.modal-body');
 
                 modalHeader.append(closeOption);
