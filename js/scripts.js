@@ -113,14 +113,13 @@
                 let closeOption = $("<p>" + 'Close Profile' + "</p>");
 
 
-                let titleElement = $('.modal-title');
-                $( "titleElement" ).text(title);
+                let titleElement = $("<h4>" + "name : " + pokemon.name + "</h4>");
 
                 let modalBody = $('.modal-body');
 
                 modalHeader.append(closeOption);
                 modalHeader.append(closeButtonElement);
-                modalHeader.append(titleElement);
+                modalBody.append(titleElement);
                 modalBody.append(contentElement);
                 modalBody.append(imageElement);
                 modalBody.append(pokemonHeight);
