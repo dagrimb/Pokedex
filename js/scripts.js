@@ -46,13 +46,13 @@
                 let pokemonList = $('.pokemon-list');
                 pokemonList.addClass('list-group list-unstyled col-6 card pt-4 mb-2 bg-warning');
                 let secondCol = $('<ul class="pokemon-list"></>');
-                let listItem = $('<li class="group-list-item card-body d-flex justify-content-center p-3.5""></li');
-                let cardTitle = $("<h3 class='card-title text-primary font-weight-bold text-uppercase text-center'>" + pokemon.name + "</>");
-                let button = $("<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#exampleModal' >" + pokemon.name + "</button>"); 
+                let listItem = $('<li class="group-list-item card-body d-flex justify-content-center p-3.5"></li');
+                let cardTitle = $("<h3 class='card-title text-primary front-weight-bold text-uppercase text-center'>" + pokemon.name + "</>");
+                let button = $("<button type='button' class='btn btn-primary ' data-toggle='modal' data-target='#exampleModal' >" + pokemon.name + " info</button>");
                 
                 listItem.append(button);
+                pokemonList.append(cardTitle);
                 row.append(secondCol);
-                listItem.append(cardTitle);
                 pokemonList.append(listItem);
 
                 //Show details of pokemon in he JS console when pokemon is clicked in the UI
