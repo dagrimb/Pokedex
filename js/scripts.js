@@ -40,7 +40,7 @@
         function addListItem(pokemon) {
             pokemonRepository.loadDetails(pokemon).then(function () {
                 let bodyStyles = $('body');
-                bodyStyles.addClass('p-3 mb-2 bg-primary');
+                bodyStyles.addClass('p-3 mb-2 bg-warning');
                 let pokemonList = $('.pokemon-list');
                 pokemonList.addClass('list-group list-unstyled col-sm-6 card');    
                 let listItem = $('<li class="group-list-item card-body"></li');
