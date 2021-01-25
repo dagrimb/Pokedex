@@ -44,7 +44,7 @@
                 let row = $('.row');
                 row.addClass('p-3 mb-2 bg-primary');
                 let pokemonList = $('.pokemon-list');
-                pokemonList.addClass('list-group list-unstyled col-sm-6 card');    
+                pokemonList.addClass('list-group list-unstyled col-6 card pt-4 mb-2 bg-warning');
                 let listItem = $('<li class="group-list-item card-body"></li');
                 let cardTitle = $("<h5 class='card-title>" + pokemon.name + "</h5>");
                 let button = $("<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#exampleModal' >" + pokemon.name + "</button>"); 
