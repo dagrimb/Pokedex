@@ -110,12 +110,15 @@
                 // Add the new modal content
                 let closeButtonElement = $('close');
 
+                let closeOption = $("<p>" + 'Close Profile' + "</p>");
+
+
                 let titleElement = $('.modal-title');
                 $( "titleElement" ).text(title);
 
                 let modalBody = $('.modal-body');
 
-       
+                modalHeader.append(closeOption);
                 modalHeader.append(closeButtonElement);
                 modalHeader.append(titleElement);
                 modalBody.append(contentElement);
