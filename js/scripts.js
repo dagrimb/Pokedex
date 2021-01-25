@@ -98,9 +98,10 @@
             }
 
             //Create the modal
-            function showModal(title, text) {
+            function showModal(pokemon) {
 
-
+                let modalContainer = $('modal');
+                modalContainer.addClass('position-absolute');
 
                 let modal = $('.modal-content');
 
