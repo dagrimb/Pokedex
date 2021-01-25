@@ -109,7 +109,6 @@
         
                 // Add the new modal content
                 let closeButtonElement = $('close');
-                $( "closeButtonElement" ).text('Close');
 
                 let titleElement = $('.modal-title');
                 $( "titleElement" ).text(title);
