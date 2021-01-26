@@ -110,9 +110,9 @@
               let closeButtonElement = $('close');
 
               let modalBody = $('.modal-body');
-              let titleElement = $("<h4>" + "name : " + item.name + "</h4>");
-              let contentElement = $("<h2>" + "height : " + item.height + "</h2>");
-              let imageElement = $('<img class="modal-img">');
+              let titleElement = $("<h2>" + "name : " + item.name + "</h2>");
+              let contentElement = $("<h4>" + "height : " + item.height + "</h4>");
+              let imageElement = $('<img class="modal-img" style="width:50%">');
               imageElement.attr("src", item.imageUrl);
 
               modalBody.empty();
