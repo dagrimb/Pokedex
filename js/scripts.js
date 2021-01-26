@@ -28,29 +28,34 @@
             let loadingMessage = null;
         }
 
-
-
+        let welcomeMessage = $('<p class="text-white font-weight-bold"> <--- click here </p>');
+        let burgerMenu = $('.navbar');
+        burgerMenu.addClass('d-flex justify-content-start');
+      
+        burgerMenu.append(welcomeMessage);
+      
         //Create button
         function addListItem(pokemon) {
             pokemonRepository.loadDetails(pokemon).then(function () {
+                
+                
+                
                 let bodyStyles = $('body');
                 bodyStyles.addClass('p-3 mb-2 bg-warning');
                 let row = $('.row');
                 row.addClass('p-3 mb-2 bg-primary');
-                let pokemonList = $('.pokemon-list');
-                pokemonList.addClass('list-group list-unstyled col-6 card pt-4 mb-2 bg-warning');
-                let secondCol = $('<ul class="pokemon-list"></>');
-                let listItem = $('<li class="group-list-item card-body d-flex justify-content-center p-3.5"></li');
+                let pokemonGroup = $('.pokemon-list');
+                pokemonGroup.addClass('list-group list-unstyled col-12 card pt-4 mb-2 bg-warning');
+                let listItem = $('<div class="group-list-item card-body d-flex justify-content-center p-3.5"></div>');
                 let cardTitle = $("<h3 class='card-title text-primary front-weight-bold text-uppercase text-center'>" + pokemon.name + "</>");
-                let modalButton = $("<button type='button' class='btn btn-primary ' data-toggle='modal' data-target='#exampleModal' >" + pokemon.name + " info</button>");
+                let button = $("<button type='button' class='btn btn-primary ' data-toggle='modal' data-target='#exampleModal' >" + pokemon.name + " info</button>");
                 
-                listItem.append(modalButton);
-                pokemonList.append(cardTitle);
-                row.append(secondCol);
-                pokemonList.append(listItem);
+                listItem.append(button);
+                pokemonGroup.append(cardTitle);
+                pokemonGroup.append(listItem);
 
                 //Show details of pokemon in he JS console when pokemon is clicked in the UI
-                modalButton.on('click', function (event) {
+                button.on('click', function (event) {
                     showDetails(pokemon);
                 });
             });
@@ -100,24 +105,28 @@
             //Create the modal
             function showModal(item) {
 
-                let modalContainer = $('modal');
-                modalContainer.addClass('position-absolute');
+              let closeOption = $('<p>Close Profile</p>');
+              
+              let closeButtonElement = $('close');
 
-                let modalHeader = $('.modal-header');
+              let modalBody = $('.modal-body');
+              let titleElement = $("<h4>" + "name : " + item.name + "</h4>");
+              let contentElement = $("<h2>" + "height : " + item.height + "</h2>");
+              let imageElement = $('<img class="modal-img">');
+              imageElement.attr("src", item.imageUrl);
+
+              modalBody.empty();
+              imageElement.empty();
+              closeOption.empty(); 
+
+              let modalContainer = $('modal');
+              modalContainer.addClass('position-absolute');
+              let modalHeader = $('.modal-header');
+              
+
         
                 // Add the new modal content
-                let closeButtonElement = $('close');
 
-                let closeOption = $("<p>" + 'Close Profile' + "</p>");
-
-                let titleElement = $("<h4>" + "name : " + item.name + "</h4>");
-
-                let contentElement = $("<h2>" + "height : " + item.height + "</h2>");
-
-                let imageElement = $('<img class="modal-img">');
-                imageElement.attr("src", item.imageUrl);
-
-                let modalBody = $('.modal-body');
 
                 modalHeader.append(closeOption);
                 modalHeader.append(closeButtonElement);
@@ -125,11 +134,11 @@
                 modalBody.append(contentElement);
                 modalBody.append(imageElement);
                 
-
+    
 
             };
 
-                //Hide Modal
+                /*Hide Modal
                 function hideModal() {
                     let modalContainer = document.querySelector('#modal-container');
                     modalContainer.classList.remove('is-visible');
@@ -141,7 +150,7 @@
                     if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
                         hideModal();
                     }
-                }); 
+                }); */
 
                 /*modalContainer.addEventListener('click', (e) => {
                     let target = e.target;
