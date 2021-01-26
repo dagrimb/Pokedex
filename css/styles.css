@@ -67,8 +67,8 @@ body {
     right: 40%;
     background-color: #09097F;
     position: absolute;
-
-  .modal-close {
+  }
+.modal-close {
     float: right;
     -webkit-appearance: none;
     border: 0;
