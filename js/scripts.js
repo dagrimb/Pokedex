@@ -18,7 +18,7 @@
 
  
         
-        //Create loading message
+      /*  //Create loading message
         function showLoadingMessage() {
             let loadingMessage = console.log("Loading...");
         };            
@@ -26,7 +26,7 @@
         //Hide loading message
         function hideLoadingMessage() {
             let loadingMessage = null;
-        }
+        } */
 
         let welcomeMessage = $('<p class="text-white font-weight-bold ml-3"> <--- click here </p>');
         let burgerMenu = $('.navbar');
