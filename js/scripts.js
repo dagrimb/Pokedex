@@ -48,14 +48,14 @@
                 pokemonGroup.addClass('list-group list-unstyled col-12 card pt-4 mb-2 bg-warning');
                 let listItem = $('<div class="group-list-item card-body d-flex justify-content-center p-3.5"></div>');
                 let cardTitle = $("<h3 class='card-title text-primary front-weight-bold text-uppercase text-center'>" + pokemon.name + "</>");
-                let button = $("<button type='button' class='btn btn-primary ' data-toggle='modal' data-target='#exampleModal' >" + pokemon.name + " info</button>");
+                let button = $("<button type='button' class='btn btn-primary list-group-item list-group-item-action text-center p-3 mb-2 bg-primary text-white' data-toggle='modal' data-target='#exampleModal' >" + pokemon.name + " info</button>");
                 
                 listItem.append(button);
                 pokemonGroup.append(cardTitle);
                 pokemonGroup.append(listItem);
 
                 //Show details of pokemon in he JS console when pokemon is clicked in the UI
-                button.on('click', function (event) {
+                button.on('click', function () {
                     showDetails(pokemon);
                 });
             });
@@ -110,8 +110,8 @@
               let closeButtonElement = $('close');
 
               let modalBody = $('.modal-body');
-              let titleElement = $("<h2>" + "name : " + item.name + "</h2>");
-              let contentElement = $("<h4>" + "height : " + item.height + "</h4>");
+              let titleElement = $("<h2>" + "name: " + item.name + "</h2>");
+              let contentElement = $("<h4>" + "height: " + item.height + "</h4>");
               let imageElement = $('<img class="modal-img" style="width:50%">');
               imageElement.attr("src", item.imageUrl);
 
