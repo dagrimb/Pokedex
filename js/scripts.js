@@ -16,13 +16,7 @@
             pokemonList.push(pokemon);
         }
 
-        //Logs details of pokemon to the modal and console
-        function showDetails(pokemon) {
-            pokemonRepository.loadDetails(pokemon).then(function () {
-                console.log(pokemon);
-                showModal(title, text);
-            });
-        }
+ 
         
         //Create loading message
         function showLoadingMessage() {
@@ -48,21 +42,27 @@
                 let secondCol = $('<ul class="pokemon-list"></>');
                 let listItem = $('<li class="group-list-item card-body d-flex justify-content-center p-3.5"></li');
                 let cardTitle = $("<h3 class='card-title text-primary front-weight-bold text-uppercase text-center'>" + pokemon.name + "</>");
-                let button = $("<button type='button' class='btn btn-primary ' data-toggle='modal' data-target='#exampleModal' >" + pokemon.name + " info</button>");
+                let modalButton = $("<button type='button' class='btn btn-primary ' data-toggle='modal' data-target='#exampleModal' >" + pokemon.name + " info</button>");
                 
-                listItem.append(button);
+                listItem.append(modalButton);
                 pokemonList.append(cardTitle);
                 row.append(secondCol);
                 pokemonList.append(listItem);
 
                 //Show details of pokemon in he JS console when pokemon is clicked in the UI
-                button.on("click", function (event) {
+                modalButton.on('click', function (event) {
                     showDetails(pokemon);
                 });
             });
         };        
             
-        
+               //Logs details of pokemon to the modal and console
+               function showDetails(item) {
+                pokemonRepository.loadDetails(item).then(function () {
+                    console.log(item);
+                    showModal(item);
+                });
+            }
 
         //Fetch data from pokemon API
         function loadList() {
@@ -98,7 +98,7 @@
             }
 
             //Create the modal
-            function showModal(pokemon) {
+            function showModal(item) {
 
                 let modalContainer = $('modal');
                 modalContainer.addClass('position-absolute');
@@ -110,12 +110,12 @@
 
                 let closeOption = $("<p>" + 'Close Profile' + "</p>");
 
-                let titleElement = $("<h4>" + "name : " + pokemon.name + "</h4>");
+                let titleElement = $("<h4>" + "name : " + item.name + "</h4>");
 
-                let contentElement = $("<h2>" + "height : " + pokemon.height + "</h2>");
+                let contentElement = $("<h2>" + "height : " + item.height + "</h2>");
 
                 let imageElement = $('<img class="modal-img">');
-                imageElement.attr("src", pokemon.imageUrl);
+                imageElement.attr("src", item.imageUrl);
 
                 let modalBody = $('.modal-body');
 
@@ -124,7 +124,6 @@
                 modalBody.append(titleElement);
                 modalBody.append(contentElement);
                 modalBody.append(imageElement);
-                modalBody.append(pokemonHeight);
                 
 
 
