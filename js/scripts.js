@@ -28,7 +28,7 @@
             let loadingMessage = null;
         }
 
-        let welcomeMessage = $('<p class="text-white font-weight-bold"> <--- click here </p>');
+        let welcomeMessage = $('<p class="text-white font-weight-bold ml-3"> <--- click here </p>');
         let burgerMenu = $('.navbar');
         burgerMenu.addClass('d-flex justify-content-start');
       
