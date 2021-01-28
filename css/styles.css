@@ -44,7 +44,7 @@ body {
 .modal {
   margin-left: -150px;
   margin-right: -150px;
-  display: inline-block;
+  display: none;
   box-sizing: border-box;
   background: #fff;
   padding: 15px;
@@ -56,6 +56,10 @@ body {
   right: 40%;
   background-color: #09097F;
   position: absolute;
+}
+
+.modal.show {
+  display: inline-block;
 }
 
 .modal-dialog {
