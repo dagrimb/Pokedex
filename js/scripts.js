@@ -65,7 +65,7 @@ let pokemonRepository =(function () {
             });
         }).catch(function (e) {
                 console.error(e);
-                hideLoadingMessage();
+                //hideLoadingMessage();
             })
         }
             
