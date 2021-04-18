@@ -13,12 +13,17 @@ let pokemonRepository =(function () {
     function add(pokemon) {
         pokemonList.push(pokemon);
     }
+    
+    //Search for listed pokemon via the Bootstrap search bar
+    $(document).ready(function(){
+      $("#searchInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $(".card-title").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
 
-    let welcomeMessage = $('<p class="text-white font-weight-bold ml-3"> <--- click here </p>');
-    let burgerMenu = $('.navbar');
-    burgerMenu.addClass('d-flex justify-content-start');  
-    burgerMenu.append(welcomeMessage);
-      
     //Create button
     function addListItem(pokemon) {
         pokemonRepository.loadDetails(pokemon).then(function () {
@@ -27,14 +32,24 @@ let pokemonRepository =(function () {
         let row = $('.row');
         row.addClass('p-3 mb-2 bg-primary');
         let pokemonGroup = $('.pokemon-list');
+        /*NEXT: try to 
+        
+        .pokemon-list (div)
+          div
+            <h3>NAME (if that doesn't work, try targeting the div with a particular class name)  
+              <div class="group-list-item card-body d-flex justify-content-center p-3.5" style=""><button type="button" class="btn btn-primary list-group-item list-group-item-action text-center p-3 mb-2 bg-primary text-white" data-toggle="modal" data-target="#exampleModal">bulbasaur info</button></div>
+              <button type="button" class="btn btn-primary list-group-item list-group-item-action text-center p-3 mb-2 bg-primary text-white" data-toggle="modal" data-target="#exampleModal">bulbasaur info</button>
+            </h3>
+          div
+              */
         pokemonGroup.addClass('list-group list-unstyled col-12 card pt-4 mb-2 bg-warning');
         let listItem = $('<div class="group-list-item card-body d-flex justify-content-center p-3.5"></div>');
         let cardTitle = $('<h3 class="card-title text-primary front-weight-bold text-uppercase text-center">' + pokemon.name + '</>');
         let button = $('<button type="button" class="btn btn-primary list-group-item list-group-item-action text-center p-3 mb-2 bg-primary text-white" data-toggle="modal" data-target="#exampleModal" >' + pokemon.name + ' info</button>');
-                
-        listItem.append(button);
+        //you want to append the listItem & button to h3 with the card-title class        
         pokemonGroup.append(cardTitle);
-        pokemonGroup.append(listItem);
+        cardTitle.append(listItem);
+        cardTitle.append(button);
 
             //Show details of pokemon in he JS console when pokemon is clicked in the UI
             button.on('click', function () {
