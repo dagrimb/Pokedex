@@ -6,6 +6,6 @@ The objective of this project was to create a small web application with HTML, C
 
 Built By: David Grimberg
 
-Technologies Implemented: HTML, CSS, JavaScript (loads data from https://pokeapi.co/api/v2/pokemon/)
+Technologies Implemented: HTML, CSS, JavaScript, jQuery, Bootstrap (loads data from https://pokeapi.co/api/v2/pokemon/)
 
 For Immediate Viewing
