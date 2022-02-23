@@ -5,6 +5,19 @@ Pokédex a responsive application to be used on all types of operating systems�
 * TECHNOLOGIES USED
   * Hypertext Markup Language (HTML)—for page layout and rendering!
   * Cascading Stylesheets (CSS)—for describing how the page should look!
+  * JavaScript—a scripting language that creates functionality in the app
+  * jQuery—a JavaScript library used for making such things as animation and event handling easier
+  * Bootstrap—a UI framework that provides elements and styles for building quality layouts
+  * Pokemon API (https://pokeapi.co/api/v2/pokemon/): an external API that retrieves Pokemon data using fetch/Ajax
+
+ * SETTING UP THE DEVELOPMENT ENVIRONMENT: What you will need
+  * A computer with a mouse or touchpad or a mobile phone with touch interactions enabled and an internet browser
+  * WIFI or a LAN connection
+  * A terminal
+  * Chrome Developer Tools (optional, but recommended): https://developers.google.com/web/tools/chrome-devtools/device-mode !
+
+
+
 
 
 Built By: David Grimberg
