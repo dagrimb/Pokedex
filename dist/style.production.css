@@ -1,7 +1,7 @@
 /*
 * Prefixed by https://autoprefixer.github.io
-* PostCSS: v7.0.29,
-* Autoprefixer: v9.7.6
+* PostCSS: v8.4.12,
+* Autoprefixer: v10.4.4
 * Browsers: last 2 version
 */
 
@@ -9,7 +9,7 @@ body {
   font-family: 'Times New Roman', Times, serif;
   font-weight: bold;
   font-size: 24px;
-  background-color: #88C5CC;
+  background-color: #ffc107;
   color: #0000CD;   
   display: block;
 }
